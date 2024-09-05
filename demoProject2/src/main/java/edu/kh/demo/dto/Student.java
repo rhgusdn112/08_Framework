@@ -21,8 +21,7 @@ public class Student {
 	
 	private String studentNo; // 학번
 	private String name;      // 이름
-	private int age;		  // 나이
-	
+	private int age;					// 나이
 	private List<String> hobbyList; // 취미 목록
 	
 }

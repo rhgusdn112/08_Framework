@@ -13,18 +13,20 @@ public class MainController {
 	
 	// 장점 : Java를 거쳐서 메인 페이지가 보여짐
 	//    -> 추가 세팅 값, DB 조회 값을 위임된 html에서 출력 가능
-	//	  == 메인 페이지에서 부터 DB 조회 값이 보여지게 된다
+	//     == 메인 페이지에서 부터 DB 조회 값이 보여지게된다
 	@RequestMapping("/") 
 	public String mainPage() {
-
+		
 		// 사용하는 템플릿 엔진 : Thymeleaf
-		// thymeleaf 를 사용하는 프로젝트에서 forward시
-		// 제공하는 접수다 : classpath:/templates/
+		
+		// Thymeleaf를 사용하는 프로젝트에서 forward시 
+		// 제공하는 접두사 : classpath:/templates/
 		// 제공하는 접미사 : .html
 		
 		// classpath:/templates/common/main.html 파일로 forward
 		return "common/main";
 	}
+	
 	
 	
 	
