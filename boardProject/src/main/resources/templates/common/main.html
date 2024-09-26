@@ -20,11 +20,31 @@
     <section class="content">
 
       <section class="content-1">
-        <!-- 확인, 보충 등등 그때 그때 사용 -->
 
-        <!-- session에 loginMember 있으면 출력 -->
-        <th:block th:text="${session.loginMember}"></th:block>
+        <table border="1" style="border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th>회원 번호</th>
+              <th>이메일</th>
+              <th>탈퇴 상태</th>
+              <th>로그인</th>
+              <th>비밀번호 초기화</th>
+              <th>상태 변경</th>
+            </tr>
+          </thead>
 
+          <tbody id="memberList">
+            <tr>
+              <th>1</th>
+              <td>member01@kh.or.kr</td>
+              <th>N</th>
+              <th> <button>로그인</button> </th>
+              <th> <button>비밀번호 초기화</button> </th>
+              <th> <button>탈퇴 상태 변경</button> </th>
+            </tr>
+          </tbody>
+
+        </table>
 
       </section>
 
@@ -33,9 +53,9 @@
       <section class="content-2">
         <!-- 로그인, 회원가입 버튼 -->
 
-       <!-- th:unless : 조건식이 false인 경우 실행 -->
-      <!-- session에 loginMember가 없을 경우 -->
-       <th:block th:unless="${session.loginMember}">
+        <!-- th:unless : 조건식이 false인 경우 실행 -->
+        <!-- session에 loginMember가 없을 경우 -->
+        <th:block th:unless="${session.loginMember}">
 
           <!-- 로그인 박스 -->
           <form action="/member/login" method="POST" id="loginForm">
@@ -51,30 +71,32 @@
                        name="memberPw" 
                        placeholder="비밀번호">
               </section>
-              
+  
               <!-- 로그인 버튼 -->
               <section>
                 <button>로그인</button>
               </section>
             </fieldset>
-            
+  
             <label>
               <!-- label 태그 : input 태그의 제목을 나타내는 태그  -->
               <input type="checkbox" name="saveEmail">
               이메일 저장
             </label>
-            
+  
             <article class="signup-find-area">
-              <a href="#">회원가입</a>
+              <a href="/member/signUp">회원가입</a>
               <span> | </span>
               <a href="#">ID/PW 찾기</a>
             </article>
-            
+  
           </form>
         </th:block>
 
+
         <!-- session에 loginMember가 있을 경우 -->
-        <th:block th:if= "${session.loginMember}">
+        <th:block th:if="${session.loginMember}">
+
           <article class="login-area">
             
             <a href="/myPage/profile">
@@ -100,17 +122,22 @@
 
             </div>
           </article>
+
         </th:block>
+
+
 
       </section>
 
     </section>
   </main>
 
-  <script src="/js/main.js"></script>
 
   <!-- common/footer.html 추가 -->
   <th:block th:replace="~{common/footer}"></th:block>
+
+
+  <script src="/js/main.js"></script>
 
 
 </body>

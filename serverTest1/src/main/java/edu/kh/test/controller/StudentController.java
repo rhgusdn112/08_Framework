@@ -13,7 +13,6 @@ import edu.kh.test.dto.Student;
 public class StudentController {
 
 	@PostMapping("select")
-
 	public String selectStudent(Model model, @ModelAttribute Student student) {
 
 		model.addAttribute("stdName", student.getStdName());
