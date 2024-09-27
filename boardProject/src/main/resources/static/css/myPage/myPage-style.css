@@ -219,7 +219,7 @@ form[name='myPageFrm']{position: relative;}
   text-align: center;
 }
 
-#imageInput{ display: none;}
+/* #imageInput{ display: none;} */
 
 .profile-btn-area > button{
   background-color: #455ba8;
