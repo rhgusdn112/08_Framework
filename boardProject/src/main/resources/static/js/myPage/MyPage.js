@@ -395,7 +395,6 @@ if(imageInput != null){ // 프로필 변경 화면인 경우
       profileImg.src = e.target.result;
       // e.target.result == 파일이 변환된 주소 형태 문자열
 
-      statusCheck = 1; // 새 파일이 선택된 상태 체크
     })
   }
 

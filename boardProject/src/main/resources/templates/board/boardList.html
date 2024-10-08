@@ -62,11 +62,13 @@
 
                 <td>
                   <!-- 썸네일 추가 예정 -->
-  
+                  <img th:if ="*{thumbnail}"
+                       th:src="*{thumbnail}" 
+                       class ="list-thumbnail">
                   <!-- 상세조회 요청 주소 /board/{boardCode}/{boardNo} -->
                   
                   <!-- boardCode=1 -> 수정할 예정!!! -->
-                  <a th:href="@{/board/{boardCode}/{boardNo} (boardCode=1, boardNo=*{boardNo})}" 
+                  <a th:href="@{/board/{boardCode}/{boardNo} (boardCode=${boardCode}, boardNo=*{boardNo})}" 
                      th:text="*{boardTitle}">게시글 제목</a>
 
                   <!-- 댓글 수 -->
@@ -95,7 +97,8 @@
 
       <div class="btn-area">
         <!-- 로그인 상태일 때만 글쓰기 버튼 노출 -->
-        <button id="insertBtn">글쓰기</button>
+        <button th:if="${session.loginMember}" 
+                id="insertBtn">글쓰기</button>
       </div>
 
 
@@ -143,9 +146,6 @@
         </ul>
       </div>
 
-
-
-
       <!-- 검색창 -->
       <form action="#" method="get" id="boardSearch">
 
@@ -167,12 +167,15 @@
 
   <th:block th:replace="~{common/footer}"></th:block>
 
-  <!-- 
-  th:inline="javascript : java 타입의 데이터를 JS타입으로 변경
-   -->
+  <!--  
+    th:inline="javascript" : java 타입의 데이터를 JS 타입으로 변경
+  -->
   <script th:inline="javascript">
     const pagination = /*[[${pagination}]]*/ "페이지네이션객체";
   </script>
+
   <script src="/js/board/boardList.js"></script>
 
 </body>
+
+</html>
