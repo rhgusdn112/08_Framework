@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
 import edu.kh.project.board.dto.Board;
+import edu.kh.project.board.dto.Comment;
 
 @Mapper
 public interface BoardMapper {
@@ -73,6 +74,35 @@ public interface BoardMapper {
 	 * @return
 	 */
 	List<Map<String, String>> selectBoardTypeList();
+
+	
+	/** 댓글 목록 조회
+	 * @param boardNo
+	 * @return commentList
+	 */
+	List<Comment> selectCommentList(int boardNo);
+
+	
+	/** 검색 조건이 맞는 게시글 수 조회
+	 * @param paramMap
+	 * @return count
+	 */
+	int getSearchCount(Map<String, Object> paramMap);
+
+	/** 검색 목록 조회
+	 * @param paramMap
+	 * @param rowBounds
+	 * @return boardList
+	 */
+	List<Board> selectSearchList(Map<String, Object> paramMap, RowBounds rowBounds);
+
+	/** 현재 게시글이 포함된 목록의 페이지로 리다이렉트
+	 * @param paramMap
+	 * @return cp
+	 */
+	int getCurrentPage(Map<String, Object> paramMap);
+	
+	
 	
 	
 	
