@@ -3,7 +3,10 @@
 <mapper namespace="com.kh.test.mapper.ProductMapper">
 
 	<select id="selectCategoryList" resultType="map">
-		SELECT CATEGORY_NO "categoryNo", CATEGORY_NAME "category_name"
+		
+		SELECT 
+		CATEGORY_NO "categoryNo", 
+		CATEGORY_NAME "category_name"
 		FROM CATEGORY
 		ORDER BY CATEGORY_NO
 	</select>

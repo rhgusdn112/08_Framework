@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kh.test.mapper.MemberMapper">
+
+	<select id="selectMemberTypeList">
+
+		SELECT 
+		M_TYPE_CODE "memberTypeCode", 
+		M_TYPE_NAME "memberTypeName"
+		FROM "MEMBER_TYPE"
+		ORDER BY M_TYPE_CODE
+
+	</select>
+
+</mapper>
