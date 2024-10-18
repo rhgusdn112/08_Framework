@@ -153,8 +153,15 @@
     // -  Java 데이터 -> JS 자료형으로 자동 변환
 
     // 로그인 되어있으면 true, 아니면 false
-    const loginCheck = /*[[${session.loginMember != null}]]*/ false;
-    
+    const loginCheck 
+      = /*[[${session.loginMember != null}]]*/ false;
+
+    // 로그인 한 회원의 닉네임
+    const memberNickname
+      = /*[[${session.loginMember?.memberNickname}]]*/ null;
+
+    // 상세 조회 한 게시글 정보
+    const boardDetail = /*[[${board}]]*/ null;
   </script>
 
 

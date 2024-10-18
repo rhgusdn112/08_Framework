@@ -25,7 +25,7 @@
 				#{boardNo},
 				<!-- 부모 댓글 -->
 				<if test="parentCommentNo == 0">
-				'NULL'
+				NULL
 				</if>
 	
 				<!-- 자식 댓글 -->
