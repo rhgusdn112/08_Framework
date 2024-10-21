@@ -64,7 +64,7 @@ public class ImageDeleteScheduling {
 		for(File serverFile : serverList) {
 			// DB에 저장된 이미지 번호와 실제 사용되지 않는 이미지 삭제
 			if(!dbFileNameList.contains(serverFile.getName())) {
-				
+		
 				log.info("{} 삭제", serverFile.getName());
 				serverFile.delete(); // 파일 삭제
 			}
